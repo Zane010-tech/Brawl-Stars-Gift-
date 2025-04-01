@@ -31,6 +31,11 @@
             align-items: center;
             flex-direction: column;
             color: white;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out; /* Плавное появление */
+        }
+        #prank-content.active {
+            opacity: 1; /* Анимация появления */
         }
         .gif-container img {
             width: 300px;
@@ -50,6 +55,44 @@
             cursor: pointer;
             margin-top: 20px;
         }
+
+        /* Медиа-запросы для адаптивности на телефонах */
+        @media (max-width: 768px) {
+            .gif-container img {
+                width: 150px; /* Уменьшаем размер гифок на маленьких экранах */
+                margin: 5px;
+            }
+            .youtube-container iframe {
+                width: 90%; /* Плеер занимает 90% ширины экрана */
+                height: 200px; /* Уменьшаем высоту плеера */
+                margin-top: 10px;
+            }
+            h1, h2 {
+                font-size: 1.5em; /* Уменьшаем заголовки */
+            }
+            button {
+                font-size: 16px; /* Уменьшаем размер текста кнопки */
+                padding: 8px 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gif-container img {
+                width: 120px; /* Ещё меньше для совсем маленьких экранов */
+                margin: 3px;
+            }
+            .youtube-container iframe {
+                width: 100%; /* Плеер на всю ширину */
+                height: 180px;
+            }
+            h1, h2 {
+                font-size: 1.2em;
+            }
+            button {
+                font-size: 14px;
+                padding: 6px 12px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -60,7 +103,6 @@
     <div id="prank-content">
         <h2>Попался! Ха-ха! С 1 апреля!</h2>
         <div class="gif-container">
-            <!-- Новые рабочие гифки котиков с короткими ссылками -->
             <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="Cat 1">
             <img src="https://media.giphy.com/media/13CoXDiaCcCoyk/giphy.gif" alt="Cat 2">
             <img src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif" alt="Cat 3">
@@ -77,6 +119,7 @@
             document.getElementById('main-content').style.display = 'none';  // Скрыть основной контент
             const prankContent = document.getElementById('prank-content');
             prankContent.style.display = 'flex'; // Показать контент пранка с flex
+            prankContent.classList.add('active'); // Добавить класс для анимации
 
             // Список с ссылками на YouTube с песнями
             let songs = [
