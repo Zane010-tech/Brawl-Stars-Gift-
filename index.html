@@ -13,7 +13,7 @@
             transition: background 0.5s;
         }
         #main-content {
-            background-image: url('https://raw.githubusercontent.com/Zane010-tech/Brawl-Stars-Gift-/main/Background.jpg'); /* Заменить на свой фон */
+            background-image: url('https://raw.githubusercontent.com/Zane010-tech/Brawl-Stars-Gift-/main/Background.jpg');
             background-size: cover;
             height: 100vh;
             display: flex;
@@ -21,13 +21,12 @@
             align-items: center;
             flex-direction: column;
             color: white;
-            text-shadow: 2px 2px 5px black; /* Добавил немного теней для текста */
+            text-shadow: 2px 2px 5px black;
         }
         #prank-content {
-            display: none;
+            display: none; /* Убрано лишнее display: flex, оно задается только через JS */
             background: black;
             height: 100vh;
-            display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
@@ -61,12 +60,12 @@
     <div id="prank-content">
         <h2>Попался! Ха-ха! С 1 апреля!</h2>
         <div class="gif-container">
-            <!-- Картинки с котиками (заменены неработающие гифки) -->
-            <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="Cat 1">
-            <img src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif" alt="Cat 2">
-            <img src="https://media.giphy.com/media/ZQO0Xmy6D4k9u/giphy.gif" alt="Cat 3">
-            <img src="https://media.giphy.com/media/Yl4f7w0V3Zq3vWMhAB/giphy.gif" alt="Cat 4">
-            <img src="https://media.giphy.com/media/1v7KPzRP3Ae5ZQ2VZq/giphy.gif" alt="Cat 5">
+            <!-- Обновленные рабочие гифки котиков -->
+            <img src="https://media.giphy.com/media/ICOgUNjpvO0PC/giphy.gif" alt="Cat 1">
+            <img src="https://media.giphy.com/media/3o6Zt6KHxJTbXCnSso/giphy.gif" alt="Cat 2">
+            <img src="https://media.giphy.com/media/l0HlRnAWODxQNqaM8/giphy.gif" alt="Cat 3">
+            <img src="https://media.giphy.com/media/13CoXDiaCcCoyk/giphy.gif" alt="Cat 4">
+            <img src="https://media.giphy.com/media/3o7TKz2b7h5rBRCfao/giphy.gif" alt="Cat 5">
         </div>
         <div class="youtube-container">
             <iframe id="music-frame" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -76,14 +75,15 @@
     <script>
         function startPrank() {
             document.getElementById('main-content').style.display = 'none';  // Скрыть основной контент
-            document.getElementById('prank-content').style.display = 'flex'; // Показать контент пранка
+            const prankContent = document.getElementById('prank-content');
+            prankContent.style.display = 'flex'; // Показать контент пранка с flex
 
             // Список с ссылками на YouTube с песнями
             let songs = [
-                'https://www.youtube.com/embed/TtA8PPtzDP4?autoplay=1', // Sweet Little Bumblebee
-                'https://www.youtube.com/embed/DDOLJayy9Cs?autoplay=1', // Baby Boy
-                'https://www.youtube.com/embed/VEj0cuqVJ-I?autoplay=1', // Yours Only Yours
-                'https://www.youtube.com/embed/qA1Ozm2fVA4?autoplay=1', // Dragostea Din Tei
+                'https://www.youtube.com/embed/TtA8PPtzDP4?autoplay=1',
+                'https://www.youtube.com/embed/DDOLJayy9Cs?autoplay=1',
+                'https://www.youtube.com/embed/VEj0cuqVJ-I?autoplay=1',
+                'https://www.youtube.com/embed/qA1Ozm2fVA4?autoplay=1',
             ];
 
             // Случайная песня
