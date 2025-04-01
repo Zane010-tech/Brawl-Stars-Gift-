@@ -13,7 +13,7 @@
             transition: background 0.5s;
         }
         #main-content {
-            background-image: url('https://raw.githubusercontent.com/Zane010-tech/Brawl-Stars-Gift/main/oboi-na-pk-08.jpg'); /* Фон с Бравл Старса */
+            background-image: url('https://raw.githubusercontent.com/Zane010-tech/Brawl-Stars-Gift/main/oboi-na-pk-08.jpg');
             background-size: cover;
             height: 100vh;
             display: flex;
@@ -40,7 +40,6 @@
             width: 560px;
             height: 315px;
             margin-top: 20px;
-            border: none; /* Убирает белый прямоугольник */
         }
         button {
             background-color: yellow;
@@ -58,7 +57,7 @@
         <h1>Получите бесплатно 100 гемов!</h1>
         <button onclick="startPrank()">Нажми, чтобы получить</button>
     </div>
-    
+
     <div id="prank-content">
         <h2>Попался! Ха-ха! С 1 апреля!</h2>
         <div class="gif-container">
@@ -74,7 +73,7 @@
         function startPrank() {
             document.getElementById('main-content').style.display = 'none';
             document.getElementById('prank-content').style.display = 'flex';
-            
+
             let songs = [
                 'https://www.youtube.com/embed/1dqJ1J0qXHU?autoplay=1', // Sweet Little Bumblebee
                 'https://www.youtube.com/embed/dlK4HkMyCd0?autoplay=1', // Baby Boy
@@ -82,7 +81,7 @@
                 'https://www.youtube.com/embed/tL8oY1Pq9cg?autoplay=1', // Dragostea Din Tei
                 'https://www.youtube.com/embed/k85mRPqvMbE?autoplay=1'  // Sandstorm
             ];
-            
+
             let randomSong = songs[Math.floor(Math.random() * songs.length)];
             document.getElementById('music-frame').src = randomSong;
         }
