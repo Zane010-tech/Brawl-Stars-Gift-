@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Получите 100 гемов!</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            transition: background 0.5s;
+        }
+        #main-content {
+            background-image: url('https://raw.githubusercontent.com/Zane010-tech/Brawl-Stars-Gift-/main/Background.jpg'); /* Заменить на свой фон */
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: white;
+            text-shadow: 2px 2px 5px black; /* Добавил немного теней для текста */
+        }
+        #prank-content {
+            display: none;
+            background: black;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: white;
+        }
+        .gif-container img {
+            width: 300px;
+            margin: 10px;
+        }
+        .youtube-container iframe {
+            width: 560px;
+            height: 315px;
+            margin-top: 20px;
+        }
+        button {
+            background-color: yellow;
+            color: black;
+            font-size: 20px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main-content">
+        <h1>Получите бесплатно 100 гемов!</h1>
+        <button onclick="startPrank()">Нажми, чтобы получить</button>
+    </div>
+    <div id="prank-content">
+        <h2>Попался! Ха-ха! С 1 апреля!</h2>
+        <div class="gif-container">
+            <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="Cat 1">
+            <img src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif" alt="Cat 2">
+        </div>
+        <div class="youtube-container">
+            <iframe id="music-frame" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <script>
+        function startPrank() {
+            document.getElementById('main-content').style.display = 'none';  // Скрыть основной контент
+            document.getElementById('prank-content').style.display = 'flex'; // Показать контент пранка
+
+            // Список с ссылками на YouTube с песнями
+            let songs = [
+                'https://www.youtube.com/embed/1dqJ1J0qXHU?autoplay=1', // Sweet Little Bumblebee
+                'https://www.youtube.com/embed/dlK4HkMyCd0?autoplay=1', // Baby Boy
+                'https://www.youtube.com/embed/7CUfx4Z6aWY?autoplay=1', // Yours Only Yours
+                'https://www.youtube.com/embed/tL8oY1Pq9cg?autoplay=1', // Dragostea Din Tei
+                'https://www.youtube.com/embed/k85mRPqvMbE?autoplay=1'  // Sandstorm
+            ];
+
+            // Случайная песня
+            let randomSong = songs[Math.floor(Math.random() * songs.length)];
+            document.getElementById('music-frame').src = randomSong;  // Вставляем ссылку на плеер
+        }
+    </script>
+</body>
+</html>
